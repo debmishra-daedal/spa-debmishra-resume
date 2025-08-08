@@ -4,24 +4,5 @@
 			"path": "."
 		}
 	],
-	"settings": {
-		"files.exclude": {
-			"**/.github": true,
-			"**/.DS_Store": true,
-			"**/node_modules": true,
-			"**/*.log": true
-		},
-		"[jsonc]": {
-			"editor.defaultFormatter": "vscode.json-language-features"
-		},
-		"[javascript]": {
-			"editor.defaultFormatter": "esbenp.prettier-vscode"
-		},
-		"[html]": {
-			"editor.defaultFormatter": "vscode.html-language-features"
-		},
-		"[css]": {
-			"editor.defaultFormatter": "esbenp.prettier-vscode"
-		}
-	}
+	"settings": {}
 }
