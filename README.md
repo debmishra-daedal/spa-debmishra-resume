@@ -1,181 +1,235 @@
-# SPA Debmishra Resume - Nuxt.js Vue.js Website
+# Portfolio Websites - Docker & Traefik Setup
 
-A beautiful and modern Vue.js website built with the Nuxt.js framework.
+A multi-site portfolio hosting platform using Docker containers and Traefik reverse proxy to serve multiple static HTML websites.
 
-## 🚀 Features
+## 🌐 Hosted Websites
 
-- **Modern UI/UX**: Beautiful gradient design with glassmorphism effects
-- **Responsive Design**: Mobile-first approach that works on all devices
-- **Interactive Elements**: Clickable button with animated feedback
-- **Vue.js 3**: Latest Vue.js with Composition API
-- **Nuxt.js 3**: Full-stack Vue.js framework
+- **Deb Mishra Portfolio** - Professional portfolio at `debmishra.localhost`
+- **Lone Cypress Holdings** - Company website at `lonecypress.localhost`
+- **Nionjord Investments** - Investment company at `nionjord.localhost`
 
-## 🛠️ Tech Stack
+## 🏗️ Architecture
 
-- **Frontend**: Vue.js 3 + Nuxt.js 3
-- **Styling**: CSS3 with modern features (Grid, Flexbox, Animations)
-- **Build Tool**: Nuxt.js built-in bundler
-- **Package Manager**: npm
+**Infrastructure**: Docker Compose + Traefik v3.0 reverse proxy  
+**Web Servers**: Nginx Alpine containers  
+**Frontend**: Static HTML/CSS/JavaScript with Tailwind CSS  
+**Network**: Bridge networking with Traefik service discovery  
 
-## 📦 Installation
+## 📦 Quick Start
 
-1. **Install dependencies:**
-   ```bash
-   npm install
-   ```
+### Prerequisites
+- Docker and Docker Compose installed
+- Hosts file configured for local domains (optional)
 
-2. **Start development server:**
-   ```bash
-   npm run dev
-   ```
+### Start All Services
+```bash
+# Start all websites and Traefik dashboard
+docker-compose up --build
 
-3. **Open your browser:**
-   Navigate to [http://localhost:3000](http://localhost:3000)
+# Start in background
+docker-compose up -d --build
+```
 
-## 🎯 Available Scripts
+### Access Services
+- **Deb Mishra Portfolio**: http://debmishra.localhost
+- **Lone Cypress Holdings**: http://lonecypress.localhost  
+- **Nionjord Investments**: http://nionjord.localhost
+- **Traefik Dashboard**: http://traefik.localhost:8080
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run generate` - Generate static site
-- `npm run preview` - Preview production build
+## 🎯 Service Management
+
+### Individual Service Control
+```bash
+# Start specific service
+docker-compose up debmishra-spa
+
+# Restart after content changes
+docker-compose restart debmishra-spa
+
+# View service logs
+docker-compose logs -f debmishra-spa
+```
+
+### Complete Management
+```bash
+# Stop all services
+docker-compose down
+
+# Rebuild and restart
+docker-compose up --build --force-recreate
+
+# View all logs
+docker-compose logs -f
+```
 
 ## 🏗️ Project Structure
 
 ```
 spa-debmishra-resume/
-├── app.vue              # Root component
-├── nuxt.config.ts       # Nuxt.js configuration
-├── package.json         # Dependencies and scripts
-├── pages/               # Page components
-│   └── index.vue        # Home page
-├── assets/              # Static assets
-│   └── css/
-│       └── main.css     # Global styles
-└── README.md            # This file
+├── docker-compose.yml           # Traefik + website services
+├── README.md                    # This documentation
+├── CLAUDE.md                    # Development guidance
+├── LICENSE                      # Apache License 2.0
+├── Deb Mishra Portfolio.pdf     # Portfolio document
+├── spa-debmishra-resume.code-workspace # VS Code settings
+│
+├── static-site-dmishra-spa/     # 🎯 Main Portfolio Website
+│   └── html/
+│       ├── index.html           # Homepage with career timeline
+│       ├── privacy.html         # Privacy policy
+│       ├── cookies.html         # Cookie policy  
+│       ├── css/
+│       │   └── tailwind.min.css # Tailwind CSS framework
+│       ├── js/
+│       │   └── main.js          # Interactive functionality
+│       ├── images/              # Assets and company logos
+│       │   ├── Profile Image.png
+│       │   ├── shell.png, nn.png, ubs.png
+│       │   ├── gs.png, gsam.png, apg.png
+│       │   └── [15+ company/university logos]
+│       └── public/
+│           └── mycv.pdf         # Downloadable CV
+│
+├── static-site-lsh-spa/         # 🏢 Lone Cypress Holdings
+│   └── html/
+│       ├── index.html
+│       └── images/
+│
+├── static-site-ni-spa/          # 💼 Nionjord Investments  
+│   └── html/
+│       └── index.html
+│
+└── static-site-d-spa/           # 📄 Additional Portfolio Variant
+    └── html/
+        ├── index.html
+        ├── privacy.html, cookies.html, terms.html
+        ├── css/tailwind.min.css
+        └── js/main.js
 ```
 
-## 🎨 Customization
+## 🐳 Docker Services
 
-### Colors
-The main color scheme uses a beautiful gradient from blue to purple. You can modify the colors in `pages/index.vue`:
+### Traefik (Reverse Proxy)
+- **Container**: `daedal-traefik-dashboard`
+- **Ports**: 80 (HTTP), 443 (HTTPS), 8080 (Dashboard)
+- **Features**: Auto-discovery, load balancing, SSL termination
+- **Dashboard**: http://traefik.localhost:8080
 
-```css
-background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+### Website Services
+| Service | Container | URL | Content |
+|---------|-----------|-----|---------|
+| `debmishra-spa` | `daedal-debmishra-spa` | debmishra.localhost | Professional portfolio |
+| `lsh-spa` | `daedal-lsh-spa` | lonecypress.localhost | Company website |
+| `ni-spa` | `daedal-ni-spa` | nionjord.localhost | Investment company |
+
+## ✨ Key Features
+
+### Deb Mishra Portfolio
+- **Professional Timeline**: Career progression with major companies
+- **Company Logos**: Shell, NN Group, UBS, Goldman Sachs, etc.
+- **Educational Background**: Cambridge, GARP, NISM, KIIT
+- **Interactive Design**: Tailwind CSS responsive layout
+- **Document Access**: Downloadable CV and portfolio PDF
+
+### Technical Highlights
+- **Performance**: Static files served by Nginx Alpine (minimal footprint)
+- **Scalability**: Easy to add new sites via docker-compose
+- **Security**: Traefik handles SSL and security headers
+- **Development**: Hot-reload friendly for content updates
+
+## 🔧 Development Workflow
+
+### Adding New Websites
+1. **Create Directory Structure**:
+   ```bash
+   mkdir -p static-site-[name]-spa/html
+   ```
+
+2. **Add Content**:
+   ```bash
+   # Add index.html, CSS, JS, images
+   cp template/* static-site-[name]-spa/html/
+   ```
+
+3. **Configure Docker Service**:
+   ```yaml
+   # Add to docker-compose.yml
+   [name]-spa:
+     image: nginx:alpine
+     container_name: daedal-[name]-spa
+     volumes:
+       - ./static-site-[name]-spa/html:/usr/share/nginx/html:ro
+     labels:
+       - "traefik.http.routers.[name].rule=Host(`[name].localhost`)"
+   ```
+
+4. **Deploy**:
+   ```bash
+   docker-compose up [name]-spa
+   ```
+
+### Content Updates
+- **Direct Editing**: Modify files in `static-site-*/html/` directories
+- **Live Reload**: Restart specific service to see changes
+- **Asset Management**: Add images to respective `images/` folders
+
+## 🌐 Local Domain Setup (Optional)
+
+Add to `/etc/hosts` (Linux/macOS) or `C:\Windows\System32\drivers\etc\hosts` (Windows):
+```
+127.0.0.1 debmishra.localhost
+127.0.0.1 lonecypress.localhost
+127.0.0.1 nionjord.localhost
+127.0.0.1 traefik.localhost
 ```
 
-### Content
-Edit the content in `pages/index.vue` to customize:
-- Page title and subtitle
-- Feature descriptions
-- Button text and behavior
+## 📊 Monitoring & Logs
 
-### Styling
-Global styles are in `assets/css/main.css`, and component-specific styles are in each Vue component.
-
-## 📱 Responsive Design
-
-The website is fully responsive and includes:
-- Mobile-first CSS approach
-- CSS Grid and Flexbox for layouts
-- Media queries for different screen sizes
-- Touch-friendly interactive elements
-
-## 🚀 Deployment
-
-### Static Site Generation
+### Service Status
 ```bash
-npm run generate
+# Check all services
+docker-compose ps
+
+# Check specific service
+docker-compose ps debmishra-spa
 ```
 
-### Production Build
+### Logs & Debugging
 ```bash
-npm run build
-npm run preview
-```
-
-## 🐳 Docker Support
-
-### Development Environment
-```bash
-# Start development server with hot reloading
-docker-compose --profile dev up --build
-
-# Access at: http://localhost:3001
-```
-
-### Production Environment (with Nginx Reverse Proxy)
-```bash
-# Start production server with nginx proxy
-docker-compose --profile prod up --build
-
-# Access at: http://localhost (port 80)
-```
-
-**Production Setup Features:**
-- ✅ Nginx reverse proxy for better security and performance
-- ✅ Security headers (XSS protection, content type options, frame options)
-- ✅ Gzip compression for faster loading
-- ✅ Static asset caching with proper cache headers
-- ✅ Hidden server information for security
-
-### Both Environments
-```bash
-# Run both development and production
-docker-compose --profile dev --profile prod up --build
-
-# Development: http://localhost:3001 (direct access)
-# Production: http://localhost (nginx proxy)
-```
-
-### Docker Commands
-```bash
-# Build images
-docker-compose build
-
-# Stop services
-docker-compose down
-
-# View logs
+# All services logs
 docker-compose logs -f
 
-# Rebuild and restart
-docker-compose up --build --force-recreate
+# Specific service
+docker-compose logs -f debmishra-spa
 
-# View specific service logs
-docker-compose logs -f nginx
-docker-compose logs -f nuxt-prod
-docker-compose logs -f nuxt-dev
+# Traefik routing logs
+docker-compose logs -f traefik
 ```
 
-### Docker Architecture
+### Traefik Dashboard
+- **URL**: http://traefik.localhost:8080
+- **Features**: Service discovery, health checks, metrics
+- **Real-time**: Active routes and backend status
 
-**Development Container:**
-- Direct Node.js server access
-- Hot reloading enabled
-- Volume mounting for live code changes
-- Port 3001 mapped to container port 3000
+## 🔒 Security Features
 
-**Production Setup:**
-- Nginx reverse proxy container
-- Nuxt.js production build container
-- Internal container networking
-- Nginx serves on port 80 with security optimizations
+- **Reverse Proxy**: Traefik handles external traffic
+- **Container Isolation**: Each service in separate container
+- **Read-only Volumes**: Static content mounted as read-only
+- **Network Segmentation**: Services communicate via Docker network
+
+## 📄 License
+
+This project is open source and available under the [Apache License 2.0](LICENSE).
 
 ## 🤝 Contributing
 
 1. Fork the repository
 2. Create a feature branch
 3. Make your changes
-4. Submit a pull request
-
-## 📄 License
-
-This project is open source and available under the [Apache License 2.0](LICENSE).
-
-## 🆘 Support
-
-If you have any questions or need help, please open an issue in the repository.
+4. Test with `docker-compose up --build`
+5. Submit a pull request
 
 ---
 
-**Happy coding! 🎉** 
+**Built with ❤️ using Docker, Traefik, and modern web technologies** 

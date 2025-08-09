@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deb Mishra - Portfolio</title>
+    <meta name="description" content="Professional portfolio of Deb Mishra - An Ardent Entrepreneur With A Penchant For Technology">
+    <link rel="stylesheet" href="css/tailwind.min.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .profile-img {
+            background-image: url('images/Profile Image.png');
+            background-size: cover;
+            background-position: center;
+        }
+        .logo-ni { background-image: url('images/ni.png'); }
+        .logo-lsh { background-image: url('images/lsh.png'); }
+        .logo-cam { background-image: url('images/cam.png'); }
+        .logo-garp { background-image: url('images/garp.png'); }
+        .logo-nism { background-image: url('images/nism.png'); }
+        .logo-kiit { background-image: url('images/kiit.png'); }
+        .logo-shell { background-image: url('images/shell.png'); }
+        .logo-nn { background-image: url('images/nn.png'); }
+        .logo-gsam { background-image: url('images/gsam.png'); }
+        .logo-apg { background-image: url('images/apg.png'); }
+        .logo-ubs { background-image: url('images/ubs.png'); }
+        .logo-cg { background-image: url('images/cg.png'); }
+        .logo-gs { background-image: url('images/gs.png'); }
+        .logo-care { background-image: url('images/care.png'); }
+        .logo-cts { background-image: url('images/cts.png'); }
+        .logo-daedal { background-image: url('images/daedal.png'); }
+        
+        .logo-bg {
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        /* Main Grid Layout */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            min-height: 100vh;
+        }
+
+        /* Left Sidebar */
+        .left-sidebar {
+            background: rgba(81, 153, 171, 0.7);
+            color: white;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            overflow-y: auto;
+        }
+
+        /* Right Content Area */
+        .right-content {
+            background: white;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: white;
+            padding: 1rem 2rem;
+            border-bottom: 1px solid #e9ecef;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 100%;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: flex-start;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: #333;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            background: rgba(81, 153, 171, 0.9);
+            color: white;
+        }
+
+        /* Profile Section in Sidebar */
+        .profile-section {
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-image: url('images/Profile Image.png');
+            background-size: cover;
+            background-position: center;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .name {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .tagline {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+            line-height: 1.4;
+        }
+
+        .social-links {
+            margin-bottom: 1.5rem;
+        }
+
+        .social-link {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            color: white;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            text-decoration: none;
+        }
+
+        .social-link:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-1px);
+        }
+
+        .download-cv {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .download-cv:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Company Logos in Profile */
+        .company-logos {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .company-logo-link {
+            text-decoration: none;
+            transition: transform 0.2s ease;
+        }
+
+        .company-logo-link:hover {
+            transform: scale(1.1);
+        }
+
+        .small-logo {
+            width: 90px;
+            height: 70px;
+            border-radius: 6px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            transition: all 0.2s ease;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .small-logo:hover {
+            border-color: rgba(255, 255, 255, 1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .ni {
+            background-image: url('images/ni.png');
+        }
+
+        .lsh {
+            background-image: url('images/lsh.png');
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #5199AB;
+            font-weight: bold;
+        }
+
+        .company-title {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #5199AB;
+            font-weight: bold;
+        }
+
+        .daedal-section {
+            position: relative;
+        }
+
+        .daedal-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('images/daedal.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.7;
+            z-index: 1;
+        }
+
+        .daedal-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .daedal-content h2 {
+            color: white;
+        }
+
+        .daedal-content p {
+            color: white;
+        }
+
+        .daedal-content a {
+            background-color: #0891b2 !important; /* cyan-600 */
+            color: white !important;
+            position: relative;
+            z-index: 3;
+        }
+
+        .daedal-content a:hover {
+            background-color: #0e7490 !important; /* cyan-700 */
+        }
+
+    </style>
+</head>
+<body class="font-sans leading-relaxed">
+    <!-- Main Portfolio Container -->
+    <div class="min-h-screen bg-white text-gray-800">
+        <!-- Main Grid Layout -->
+        <div class="main-grid">
+            <!-- Left Sidebar -->
+            <aside class="left-sidebar">
+                <!-- Profile Section -->
+                <section id="home" class="profile-section">
+                    <div class="profile-image-placeholder">
+                        <div class="profile-img"></div>
+                    </div>
+                    <h1 class="name">Deb Mishra</h1>
+                    <p class="tagline">An Ardent Entrepreneur With A<br>Penchant For Technology</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/whoisdebmishra/" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn</a>
+                    </div>
+                    <a href="public/mycv.pdf" download="Deb_Mishra_CV.pdf" class="download-cv">Download CV</a>
+                    
+                    <div class="company-logos">
+                        <a href="https://www.nionjord.com" target="_blank" rel="noopener noreferrer" class="company-logo-link">
+                            <div class="small-logo ni"></div>
+                        </a>
+                        <a href="https://www.lonecypress.nl" target="_blank" rel="noopener noreferrer" class="company-logo-link">
+                            <div class="small-logo lsh"></div>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- Education Section -->
+                <section id="education" class="flex-1">
+                    <h2 class="text-xl font-bold mb-6 text-center text-white border-b-2 border-white border-opacity-30 pb-2">Education</h2>
+                    <div class="flex flex-col gap-6">
+                        <div class="flex items-center gap-4 p-4 bg-white bg-opacity-10 rounded-lg backdrop-blur-sm">
+                            <a href="https://www.cam.ac.uk" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-2/5">
+                                <div class="logo-cam logo-bg w-full h-10 bg-white rounded-lg transition-transform duration-200 hover:scale-105 hover:shadow-lg"></div>
+                            </a>
+                            <div class="flex-1 min-w-0">
+                                <h3 class="text-sm text-white mb-1 font-semibold">MST in Entrepreneurship</h3>
+                                <p class="text-white text-opacity-80 text-xs leading-tight">UK, Graduation year: Ongoing</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-4 p-4 bg-white bg-opacity-10 rounded-lg backdrop-blur-sm">
+                            <a href="https://www.garp.org" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-2/5">
+                                <div class="logo-garp logo-bg w-full h-10 bg-white rounded-lg transition-transform duration-200 hover:scale-105 hover:shadow-lg"></div>
+                            </a>
+                            <div class="flex-1 min-w-0">
+                                <h3 class="text-sm text-white mb-1 font-semibold">Financial Risk manager (FRM)</h3>
+                                <p class="text-white text-opacity-80 text-xs leading-tight">USA, Graduation year: 2019</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-4 bg-white bg-opacity-10 rounded-lg backdrop-blur-sm">
+                            <a href="https://www.nism.ac.in" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-2/5">
+                                <div class="logo-nism logo-bg w-full h-10 bg-white rounded-lg transition-transform duration-200 hover:scale-105 hover:shadow-lg"></div>
+                            </a>
+                            <div class="flex-1 min-w-0">
+                                <h3 class="text-sm text-white mb-1 font-semibold">PG program in securities markets</h3>
+                                <p class="text-white text-opacity-80 text-xs leading-tight">India, Graduation year: 2011</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-4 bg-white bg-opacity-10 rounded-lg backdrop-blur-sm">
+                            <a href="https://www.kiit.ac.in" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-2/5">
+                                <div class="logo-kiit logo-bg w-full h-10 bg-white rounded-lg transition-transform duration-200 hover:scale-105 hover:shadow-lg"></div>
+                            </a>
+                            <div class="flex-1 min-w-0">
+                                <h3 class="text-sm text-white mb-1 font-semibold">B.Tech in Civil Engineering</h3>
+                                <p class="text-white text-opacity-80 text-xs leading-tight">India, Graduation year: 2007</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Companies Section -->
+                <section class="flex-1">
+                    <h2 class="text-xl font-bold mb-6 text-center text-white border-b-2 border-white border-opacity-30 pb-2">Companies I worked for</h2>
+                    <div class="flex flex-col gap-6">
+                        <a href="https://www.shell.com" target="_blank" rel="noopener noreferrer" class="block transform transition-all duration-200 hover:-translate-y-1 hover:shadow-lg">
+                            <div class="flex items-center gap-4 p-4 bg-white bg-opacity-10 rounded-lg backdrop-blur-sm">
+                                <div class="logo-shell logo-bg w-2/5 h-10 bg-white rounded-lg"></div>
+                                <div class="flex-1 min-w-0">
+                                    <h3 class="text-sm text-white mb-1 font-semibold">Shell</h3>
+                                    <p class="text-white text-opacity-80 text-xs leading-tight">2021 - 2025</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="https://www.nn.nl" target="_blank" rel="noopener noreferrer" class="block transform transition-all duration-200 hover:-translate-y-1 hover:shadow-lg">
+                            <div class="flex items-center gap-4 p-4 bg-white bg-opacity-10 rounded-lg backdrop-blur-sm">
+                                <div class="logo-nn logo-bg w-2/5 h-10 bg-white rounded-lg"></div>
+                                <div class="flex-1 min-w-0">
+                                    <h3 class="text-sm text-white mb-1 font-semibold">Nationale Nederlanden</h3>
+                                    <p class="text-white text-opacity-80 text-xs leading-tight">2018 - 2021</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="https://www.am.gs.com" target="_blank" rel="noopener noreferrer" class="block transform transition-all duration-200 hover:-translate-y-1 hover:shadow-lg">
+                            <div class="flex items-center gap-4 p-4 bg-white bg-opacity-10 rounded-lg backdrop-blur-sm">
+                                <div class="logo-gsam logo-bg w-2/5 h-10 bg-white rounded-lg"></div>
+                                <div class="flex-1 min-w-0">
+                                    <h3 class="text-sm text-white mb-1 font-semibold">Goldman Sachs Asset Management</h3>
+                                    <p class="text-white text-opacity-80 text-xs leading-tight">2017 - 2018</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="https://www.apg-am.nl" target="_blank" rel="noopener noreferrer" class="block transform transition-all duration-200 hover:-translate-y-1 hover:shadow-lg">
+                            <div class="flex items-center gap-4 p-4 bg-white bg-opacity-10 rounded-lg backdrop-blur-sm">
+                                <div class="logo-apg logo-bg w-2/5 h-10 bg-white rounded-lg"></div>
+                                <div class="flex-1 min-w-0">
+                                    <h3 class="text-sm text-white mb-1 font-semibold">APG Asset Management</h3>
+                                    <p class="text-white text-opacity-80 text-xs leading-tight">2016 - 2017</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="https://www.ubs.com" target="_blank" rel="noopener noreferrer" class="block transform transition-all duration-200 hover:-translate-y-1 hover:shadow-lg">
+                            <div class="flex items-center gap-4 p-4 bg-white bg-opacity-10 rounded-lg backdrop-blur-sm">
+                                <div class="logo-ubs logo-bg w-2/5 h-10 bg-white rounded-lg"></div>
+                                <div class="flex-1 min-w-0">
+                                    <h3 class="text-sm text-white mb-1 font-semibold">UBS</h3>
+                                    <p class="text-white text-opacity-80 text-xs leading-tight">2014 - 2016</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="https://www.capgemini.com" target="_blank" rel="noopener noreferrer" class="block transform transition-all duration-200 hover:-translate-y-1 hover:shadow-lg">
+                            <div class="flex items-center gap-4 p-4 bg-white bg-opacity-10 rounded-lg backdrop-blur-sm">
+                                <div class="logo-cg logo-bg w-2/5 h-10 bg-white rounded-lg"></div>
+                                <div class="flex-1 min-w-0">
+                                    <h3 class="text-sm text-white mb-1 font-semibold">Capgemini</h3>
+                                    <p class="text-white text-opacity-80 text-xs leading-tight">2013 - 2016</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="https://www.goldensource.com" target="_blank" rel="noopener noreferrer" class="block transform transition-all duration-200 hover:-translate-y-1 hover:shadow-lg">
+                            <div class="flex items-center gap-4 p-4 bg-white bg-opacity-10 rounded-lg backdrop-blur-sm">
+                                <div class="logo-gs logo-bg w-2/5 h-10 bg-white rounded-lg"></div>
+                                <div class="flex-1 min-w-0">
+                                    <h3 class="text-sm text-white mb-1 font-semibold">Goldensource</h3>
+                                    <p class="text-white text-opacity-80 text-xs leading-tight">2012 - 2013</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="https://www.careratings.com" target="_blank" rel="noopener noreferrer" class="block transform transition-all duration-200 hover:-translate-y-1 hover:shadow-lg">
+                            <div class="flex items-center gap-4 p-4 bg-white bg-opacity-10 rounded-lg backdrop-blur-sm">
+                                <div class="logo-care logo-bg w-2/5 h-10 bg-white rounded-lg"></div>
+                                <div class="flex-1 min-w-0">
+                                    <h3 class="text-sm text-white mb-1 font-semibold">CARE Ratings</h3>
+                                    <p class="text-white text-opacity-80 text-xs leading-tight">2011 - 2012</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="https://www.cognizant.com" target="_blank" rel="noopener noreferrer" class="block transform transition-all duration-200 hover:-translate-y-1 hover:shadow-lg">
+                            <div class="flex items-center gap-4 p-4 bg-white bg-opacity-10 rounded-lg backdrop-blur-sm">
+                                <div class="logo-cts logo-bg w-2/5 h-10 bg-white rounded-lg"></div>
+                                <div class="flex-1 min-w-0">
+                                    <h3 class="text-sm text-white mb-1 font-semibold">Cognizant</h3>
+                                    <p class="text-white text-opacity-80 text-xs leading-tight">2007 - 2010</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+            </aside>
+
+            <!-- Right Main Content -->
+            <main class="right-content">
+                <!-- Navigation -->
+                <nav class="navbar">
+                    <div class="nav-container">
+                        <div class="nav-links">
+                            <a href="#home" class="nav-link active">Home</a>
+                            <a href="#education" class="nav-link">Education</a>
+                            <a href="#work" class="nav-link">Work</a>
+                            <a href="#contact" class="nav-link">Contact</a>
+                        </div>
+                    </div>
+                </nav>
+
+                <!-- My Story Section -->
+                <section class="bg-white px-8 py-12">
+                    <h2 class="section-title">My Story</h2>
+                    <div class="max-w-full">
+                        <h3 class="text-xl text-gray-800 mb-6 font-semibold">Experienced Financial Technology Professional</h3>
+                        <p class="text-base leading-relaxed mb-6 text-gray-600">Having spent over 15 years working in financial technology sector, I have worked extensively in managing existing data management platforms, migration of data management platforms, maintaining various enterprise data management system and providing techno-functional assistance in overall management of reference data management.</p>
+                        <p class="text-base leading-relaxed text-gray-600">Having delivered more than a few large projects across both buy-side and sell-side financial entities, I have garnered a well formed acumen of various financial entities e.g. instrument static data, price management, legal entities, ratings etc.</p>
+                    </div>
+                </section>
+
+                <!-- Company Section -->
+                <section class="px-8 py-12">
+                    <div class="daedal-section">
+                        <div class="daedal-content px-8 py-12">
+                            <h2 class="company-title">Daedal</h2>
+                            <p class="leading-relaxed mb-8 text-lg">We provide both software development and IT consulting services to our clients. In addition, we have also built a few in-house products; some of which help make day to day functioning of businesses less cumbersome and some help the average individuals in their decision making process. While we offer services globally, we especially have a strong foothold in Europe and America, operating out of our HQ in The Hague, Netherlands and Americas-HQ in Charlotte, North Carolina.</p>
+                            <a href="https://www.daedal.org" target="_blank" rel="noopener noreferrer" class="inline-block bg-cyan-600 text-white px-8 py-4 rounded-full transition-all duration-300 text-base hover:bg-cyan-700 hover:transform hover:-translate-y-1">Learn more</a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Work Experience Section -->
+                <section id="work" class="bg-white px-8 py-20">
+                    <h2 class="text-3xl font-bold mb-8 text-cyan-600">Work experience</h2>
+                    <div class="max-w-full">
+                        <div class="mb-8 p-6 bg-white rounded-2xl border-l-4 border-cyan-600 shadow-sm">
+                            <div class="flex gap-6">
+                                <div class="text-2xl w-12 h-12 flex items-center justify-center bg-cyan-600 rounded-full text-white flex-shrink-0">🏢</div>
+                                <div>
+                                    <h3 class="text-lg text-gray-800 mb-2 font-semibold">Start-up set up</h3>
+                                    <p class="font-bold text-cyan-600 mb-1 text-sm">Lone Cypress Holdings & subsidiaries</p>
+                                    <p class="text-gray-600 italic mb-4 text-sm">Netherlands</p>
+                                    <p class="leading-relaxed text-gray-600 text-sm">Managing a 3 company holding structure in the Netherlands. Promoting company product and services to various clients. Understanding the corporate tax structure in Netherlands and hiring appropriate staff to manage the same.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-8 p-6 bg-white rounded-2xl border-l-4 border-cyan-600 shadow-sm">
+                            <div class="flex gap-6">
+                                <div class="text-2xl w-12 h-12 flex items-center justify-center bg-cyan-600 rounded-full text-white flex-shrink-0">👥</div>
+                                <div>
+                                    <h3 class="text-lg text-gray-800 mb-2 font-semibold">Leadership and team management</h3>
+                                    <p class="font-bold text-cyan-600 mb-1 text-sm">NN & Capgemini/UBS</p>
+                                    <p class="text-gray-600 italic mb-4 text-sm">Netherlands, Switzerland, UK & India</p>
+                                    <p class="leading-relaxed text-gray-600 text-sm">Was leading the IT team that was in charge of NNs RTB data management platform (Markit EDM). Was one of NN counterparts running NN-Cognizant...</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-8 p-6 bg-white rounded-2xl border-l-4 border-cyan-600 shadow-sm">
+                            <div class="flex gap-6">
+                                <div class="text-2xl w-12 h-12 flex items-center justify-center bg-cyan-600 rounded-full text-white flex-shrink-0">🤝</div>
+                                <div>
+                                    <h3 class="text-lg text-gray-800 mb-2 font-semibold">Client and vendor management</h3>
+                                    <p class="font-bold text-cyan-600 mb-1 text-sm">NN, Capgemini/UBS, Goldensource & CARE Ratings</p>
+                                    <p class="text-gray-600 italic mb-4 text-sm">Netherlands, Switzerland, UK & India</p>
+                                    <p class="leading-relaxed text-gray-600 text-sm">Served as Bloombergs counterpart in NN for functional scope and product design. Was the SPOC for all vendor communication between UBS and its data vendors.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-8 p-6 bg-white rounded-2xl border-l-4 border-cyan-600 shadow-sm">
+                            <div class="flex gap-6">
+                                <div class="text-2xl w-12 h-12 flex items-center justify-center bg-cyan-600 rounded-full text-white flex-shrink-0">📋</div>
+                                <div>
+                                    <h3 class="text-lg text-gray-800 mb-2 font-semibold">Project Management</h3>
+                                    <p class="font-bold text-cyan-600 mb-1 text-sm">SAMCo & NN</p>
+                                    <p class="text-gray-600 italic mb-4 text-sm">Netherlands</p>
+                                    <p class="leading-relaxed text-gray-600 text-sm">Currently part of the project team that is working on migrating the legacy data management setup with SAMCo to a managed service provider RIMES.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-8 p-6 bg-white rounded-2xl border-l-4 border-cyan-600 shadow-sm">
+                            <div class="flex gap-6">
+                                <div class="text-2xl w-12 h-12 flex items-center justify-center bg-cyan-600 rounded-full text-white flex-shrink-0">📊</div>
+                                <div>
+                                    <h3 class="text-lg text-gray-800 mb-2 font-semibold">Reference data management and price process</h3>
+                                    <p class="font-bold text-cyan-600 mb-1 text-sm">SAMCo, NN, APG, Capgemini/UBS & Goldensource</p>
+                                    <p class="text-gray-600 italic mb-4 text-sm">Netherlands, Switzerland, & UK</p>
+                                    <p class="leading-relaxed text-gray-600 text-sm">Re-designed the price master process and built the security master framework from ground up for SAMCo.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-8 p-6 bg-white rounded-2xl border-l-4 border-cyan-600 shadow-sm">
+                            <div class="flex gap-6">
+                                <div class="text-2xl w-12 h-12 flex items-center justify-center bg-cyan-600 rounded-full text-white flex-shrink-0">🔍</div>
+                                <div>
+                                    <h3 class="text-lg text-gray-800 mb-2 font-semibold">Functional and business analysis</h3>
+                                    <p class="font-bold text-cyan-600 mb-1 text-sm">SAMCo, NN, APG & CARE Ratings</p>
+                                    <p class="leading-relaxed text-gray-600 text-sm">Working as a lead business analyst driving the security master/issuer master implementation within SAMCo.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- Contact Section -->
+        <section id="contact" class="bg-gradient-to-br from-gray-50 to-gray-200 py-20">
+            <div class="max-w-6xl mx-auto px-8">
+                <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Contact Me</h2>
+                <div class="grid md:grid-cols-2 gap-16 mt-12">
+                    <div class="contact-info">
+                        <h3 class="text-3xl text-gray-800 mb-8">Get in Touch</h3>
+                        <div class="flex items-start gap-4 mb-8">
+                            <div class="text-xl w-10 h-10 flex items-center justify-center bg-cyan-600 rounded-full text-white flex-shrink-0">📍</div>
+                            <div>
+                                <h4 class="text-gray-800 mb-2 text-base">Address</h4>
+                                <p class="text-gray-600 leading-relaxed text-sm">Lone Cypress Holdings B.V, Rode Olifant, Zuid hollandlaan 7, 2596 AL, Den Haag, The Netherlands.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 mb-8">
+                            <div class="text-xl w-10 h-10 flex items-center justify-center bg-cyan-600 rounded-full text-white flex-shrink-0">✉️</div>
+                            <div>
+                                <h4 class="text-gray-800 mb-2 text-base">Email</h4>
+                                <p class="text-gray-600 leading-relaxed text-sm">email@debmishra.me</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 mb-8">
+                            <div class="text-xl w-10 h-10 flex items-center justify-center bg-cyan-600 rounded-full text-white flex-shrink-0">📞</div>
+                            <div>
+                                <h4 class="text-gray-800 mb-2 text-base">Phone</h4>
+                                <p class="text-gray-600 leading-relaxed text-sm">+31-641 306 603</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-3xl shadow-lg overflow-hidden flex flex-col h-full">
+                        <div class="flex-1 min-h-80 bg-gradient-to-br from-cyan-600 to-blue-500 flex items-center justify-center relative" style="background-image: url('images/inspiration.jpg'); background-size: cover; background-position: center; background-blend-mode: overlay;">
+                            <!-- Inspiration section -->
+                            <div class="w-full h-full flex items-center justify-center bg-white bg-opacity-10 backdrop-blur-lg">
+                            </div>
+                        </div>
+                        <div class="p-8 text-center bg-white">
+                            <p class="font-serif italic text-xl text-cyan-600 leading-relaxed m-0 font-light tracking-wide">You get but one life. Don't just live it; experience it.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-white py-8">
+            <div class="max-w-6xl mx-auto px-8 flex justify-between items-center">
+                <p class="text-left">©Daedal Inc, NC, USA. All rights reserved.</p>
+                <div class="text-right">
+                    <a href="cookies.html" class="text-cyan-600 mx-2 hover:underline">Cookies Policy</a>
+                    <a href="privacy.html" class="text-cyan-600 mx-2 hover:underline">Privacy Policy</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

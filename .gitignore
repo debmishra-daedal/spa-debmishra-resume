@@ -1,9 +1,4 @@
-# Nuxt dev/build outputs
-.output
-.data
-.nuxt
-.nitro
-.cache
+# Build outputs
 dist
 
 # Node dependencies
@@ -71,9 +66,6 @@ jspm_packages/
 # Next.js build output
 .next
 
-# Nuxt.js build / generate output
-.nuxt
-dist
 
 # Storybook build outputs
 .out
@@ -102,3 +94,9 @@ Desktop.ini
 # VS code workspace storage
 .vscode/.history
 *.code-workspace
+
+# Let's Encrypt certificates
+letsencrypt/
+
+# Authentication files
+.htpasswd
