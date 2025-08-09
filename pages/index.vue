@@ -15,6 +15,15 @@
             <a href="https://www.linkedin.com/in/whoisdebmishra/" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn</a>
           </div>
           <a href="/mycv.pdf" download="Deb_Mishra_CV.pdf" class="download-cv">Download CV</a>
+          
+          <div class="company-logos">
+            <a href="https://www.nionjord.com" target="_blank" rel="noopener noreferrer" class="company-logo-link">
+              <div class="small-logo ni"></div>
+            </a>
+            <a href="https://www.lonecypress.nl" target="_blank" rel="noopener noreferrer" class="company-logo-link">
+              <div class="small-logo lsh"></div>
+            </a>
+          </div>
         </section>
 
         <!-- Education Section -->
@@ -22,7 +31,7 @@
           <h2 class="sidebar-title">Education</h2>
           <div class="education-list">
             <div class="education-item">
-              <div class="cambridge"></div>
+              <a href="https://www.cam.ac.uk" target="_blank" rel="noopener noreferrer" class="cambridge"></a>
               <div class="education-content">
                 <h3>MST in Entrepreneurship</h3>
                 <p class="university">UK, Graduation year: Ongoing</p>
@@ -30,7 +39,7 @@
             </div>
             
             <div class="education-item">
-              <div class="frm"></div>
+              <a href="https://www.garp.org" target="_blank" rel="noopener noreferrer" class="frm"></a>
               <div class="education-content">
                 <h3>Financial Risk manager (FRM)</h3>
                 <p class="university">USA, Graduation year: 2019</p>
@@ -38,7 +47,7 @@
             </div>
 
             <div class="education-item">
-              <div class="nism"></div>
+              <a href="https://www.nism.ac.in" target="_blank" rel="noopener noreferrer" class="nism"></a>
               <div class="education-content">
                 <h3>PG program in securities markets</h3>
                 <p class="university">India, Graduation year: 2011</p>
@@ -46,7 +55,7 @@
             </div>
 
             <div class="education-item">
-              <div class="kiit"></div>
+              <a href="https://www.kiit.ac.in" target="_blank" rel="noopener noreferrer" class="kiit"></a>
               <div class="education-content">
                 <h3>B.Tech in Civil Engineering</h3>
                 <p class="university">India, Graduation year: 2007</p>
@@ -58,45 +67,91 @@
         <!-- Companies Section -->
         <section class="companies-section">
           <h2 class="sidebar-title">Companies I worked for</h2>
-          <div class="companies-timeline">
-            <div class="timeline-item">
-              <div class="company-logo-placeholder"></div>
-              <span class="timeline-years">2021 - 2024</span>
-            </div>
-            <div class="timeline-item">
-              <div class="company-logo-placeholder"></div>
-              <span class="timeline-years">2018 - 2021</span>
-            </div>
-            <div class="timeline-item">
-              <div class="company-logo-placeholder"></div>
-              <span class="timeline-years">2017 - 2018</span>
-            </div>
-            <div class="timeline-item">
-              <div class="company-logo-placeholder"></div>
-              <span class="timeline-years">2016 - 2017</span>
-            </div>
-            <div class="timeline-item">
-              <div class="company-logo-placeholder"></div>
-              <span class="timeline-years">2014 - 2016</span>
-            </div>
-            <div class="timeline-item">
-              <div class="company-logo-placeholder"></div>
-              <span class="timeline-years">2013 - 2016</span>
-            </div>
-            <div class="timeline-item">
-              <div class="company-logo-placeholder"></div>
-              <span class="timeline-years">2012 - 2013</span>
-            </div>
-            <div class="timeline-item">
-              <div class="company-logo-placeholder"></div>
-              <span class="timeline-years">2011 - 2012</span>
-            </div>
-            <div class="timeline-item">
-              <div class="company-logo-placeholder"></div>
-              <span class="timeline-years">2007 - 2010</span>
-            </div>
+          <div class="companies-list">
+            <a href="https://www.shell.com" target="_blank" rel="noopener noreferrer" class="company-link">
+              <div class="company-item">
+                <div class="company-logo shell"></div>
+                <div class="company-content">
+                  <h3>Shell</h3>
+                  <p class="company-years">2021 - 2025</p>
+                </div>
+              </div>
+            </a>
+            <a href="https://www.nn.nl" target="_blank" rel="noopener noreferrer" class="company-link">
+              <div class="company-item">
+                <div class="company-logo nn"></div>
+                <div class="company-content">
+                  <h3>Nationale Nederlanden</h3>
+                  <p class="company-years">2018 - 2021</p>
+                </div>
+              </div>
+            </a>
+            <a href="https://www.am.gs.com" target="_blank" rel="noopener noreferrer" class="company-link">
+              <div class="company-item">
+                <div class="company-logo gsam"></div>
+                <div class="company-content">
+                  <h3>Goldman Sachs Asset Management</h3>
+                  <p class="company-years">2017 - 2018</p>
+                </div>
+              </div>
+            </a>
+            <a href="https://www.apg-am.nl" target="_blank" rel="noopener noreferrer" class="company-link">
+              <div class="company-item">
+                <div class="company-logo apg"></div>
+                <div class="company-content">
+                  <h3>APG Asset Management</h3>
+                  <p class="company-years">2016 - 2017</p>
+                </div>
+              </div>
+            </a>
+            <a href="https://www.ubs.com" target="_blank" rel="noopener noreferrer" class="company-link">
+              <div class="company-item">
+                <div class="company-logo ubs"></div>
+                <div class="company-content">
+                  <h3>UBS</h3>
+                  <p class="company-years">2014 - 2016</p>
+                </div>
+              </div>
+            </a>
+            <a href="https://www.capgemini.com" target="_blank" rel="noopener noreferrer" class="company-link">
+              <div class="company-item">
+                <div class="company-logo capgemini"></div>
+                <div class="company-content">
+                  <h3>Capgemini</h3>
+                  <p class="company-years">2013 - 2016</p>
+                </div>
+              </div>
+            </a>
+            <a href="https://www.goldensource.com" target="_blank" rel="noopener noreferrer" class="company-link">
+              <div class="company-item">
+                <div class="company-logo gs"></div>
+                <div class="company-content">
+                  <h3>Goldensource</h3>
+                  <p class="company-years">2012 - 2013</p>
+                </div>
+              </div>
+            </a>
+            <a href="https://www.careratings.com" target="_blank" rel="noopener noreferrer" class="company-link">
+              <div class="company-item">
+                <div class="company-logo care"></div>
+                <div class="company-content">
+                  <h3>CARE Ratings</h3>
+                  <p class="company-years">2011 - 2012</p>
+                </div>
+              </div>
+            </a>
+            <a href="https://www.cognizant.com" target="_blank" rel="noopener noreferrer" class="company-link">
+              <div class="company-item">
+                <div class="company-logo cts"></div>
+                <div class="company-content">
+                  <h3>Cognizant</h3>
+                  <p class="company-years">2007 - 2010</p>
+                </div>
+              </div>
+            </a>
           </div>
         </section>
+
       </aside>
 
       <!-- Right Main Content -->
@@ -250,659 +305,11 @@
 </template>
 
 <script setup>
-// Portfolio page - no form logic needed
+useHead({
+  title: 'Deb Mishra - Portfolio',
+  meta: [
+    { name: 'description', content: 'Professional portfolio of Deb Mishra - An Ardent Entrepreneur With A Penchant For Technology' }
+  ]
+})
 </script>
-
-<style scoped>
-.portfolio {
-  min-height: 100vh;
-  background: white;
-  color: #333;
-}
-
-/* Main Grid Layout */
-.main-grid {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  min-height: 100vh;
-}
-
-/* Left Sidebar */
-.left-sidebar {
-  background: #5199AB;
-  color: white;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-  overflow-y: auto;
-}
-
-/* Profile Section in Sidebar */
-.profile-section {
-  text-align: center;
-}
-
-.profile-img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  background-image: url('~/assets/img/Profile Image.png');
-  background-size: cover;
-  background-position: center;
-  border: 3px solid rgba(255, 255, 255, 0.3);
-  margin: 0 auto 1.5rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.name {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-.tagline {
-  font-size: 1rem;
-  margin-bottom: 1.5rem;
-  opacity: 0.9;
-  line-height: 1.4;
-}
-
-.social-links {
-  margin-bottom: 1.5rem;
-}
-
-.social-link {
-  display: inline-block;
-  padding: 0.4rem 1rem;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 20px;
-  color: white;
-  transition: all 0.3s ease;
-  font-size: 0.9rem;
-}
-
-.social-link:hover {
-  background: rgba(255, 255, 255, 0.3);
-  transform: translateY(-1px);
-}
-
-.download-cv {
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  padding: 0.8rem 1.5rem;
-  font-size: 1rem;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  width: 100%;
-  display: inline-block;
-  text-align: center;
-  text-decoration: none;
-}
-
-.download-cv:hover {
-  background: rgba(255, 255, 255, 0.3);
-  transform: translateY(-1px);
-}
-
-/* Sidebar Titles */
-.sidebar-title {
-  font-size: 1.4rem;
-  font-weight: bold;
-  margin-bottom: 1.5rem;
-  text-align: center;
-  color: white;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
-  padding-bottom: 0.5rem;
-}
-
-/* Education in Sidebar */
-.education-section {
-  flex: 1;
-}
-
-.education-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.education-item {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  backdrop-filter: blur(5px);
-}
-
-.cambridge {
-  width: 40px;
-  height: 40px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-weight: bold;
-  flex-shrink: 0;
-}
-
-.cambridge::before {
-  content: '🎓';
-  font-size: 1.2rem;
-}
-.frm {
-  width: 40px;
-  height: 40px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-weight: bold;
-  flex-shrink: 0;
-}
-
-.frm::before {
-  content: '🎓';
-  font-size: 1.2rem;
-}
-.nism {
-  width: 40px;
-  height: 40px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-weight: bold;
-  flex-shrink: 0;
-}
-
-.nism::before {
-  content: '🎓';
-  font-size: 1.2rem;
-}
-.kiit {
-  width: 40px;
-  height: 40px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-weight: bold;
-  flex-shrink: 0;
-}
-
-.kiit::before {
-  content: '🎓';
-  font-size: 1.2rem;
-}
-
-.education-content h3 {
-  font-size: 0.9rem;
-  color: white;
-  margin-bottom: 0.3rem;
-  font-weight: 600;
-}
-
-.university {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 0.8rem;
-  line-height: 1.3;
-}
-
-/* Companies in Sidebar */
-.companies-section {
-  flex: 1;
-}
-
-.companies-timeline {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-}
-
-.timeline-item {
-  text-align: center;
-  padding: 1rem;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  backdrop-filter: blur(5px);
-  transition: transform 0.3s ease;
-}
-
-.timeline-item:hover {
-  transform: translateY(-2px);
-}
-
-.company-logo-placeholder {
-  width: 50px;
-  height: 50px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
-  margin: 0 auto 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 1.2rem;
-}
-
-.company-logo-placeholder::before {
-  content: '🏢';
-}
-
-.timeline-years {
-  font-weight: 600;
-  color: white;
-  font-size: 0.8rem;
-}
-
-/* Right Content Area */
-.right-content {
-  background: white;
-  display: flex;
-  flex-direction: column;
-  overflow-y: auto;
-}
-
-/* Navigation */
-.navbar {
-  background: white;
-  padding: 1rem 2rem;
-  border-bottom: 1px solid #e9ecef;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.nav-container {
-  max-width: 100%;
-}
-
-.nav-links {
-  display: flex;
-  justify-content: flex-start;
-  gap: 2rem;
-}
-
-.nav-link {
-  color: #333;
-  font-weight: 500;
-  padding: 0.5rem 1rem;
-  border-radius: 25px;
-  transition: all 0.3s ease;
-}
-
-.nav-link:hover,
-.nav-link.active {
-  background: #5199AB;
-  color: white;
-}
-
-/* Company Section in Right Content */
-.company-section {
-  padding: 3rem 2rem;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-  color: #333;
-}
-
-.company-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  color: #5199AB;
-  font-weight: bold;
-}
-
-.company-section p {
-  line-height: 1.7;
-  margin-bottom: 2rem;
-  color: #636e72;
-  font-size: 1.1rem;
-}
-
-.learn-more {
-  background: #5199AB;
-  color: white;
-  border: none;
-  padding: 1rem 2rem;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 1rem;
-  text-decoration: none;
-  display: inline-block;
-}
-
-.learn-more:hover {
-  background: #4a8a9a;
-  transform: translateY(-2px);
-  color: white;
-}
-
-/* Story Section in Right Content */
-.story-section {
-  padding: 3rem 2rem;
-  background: white;
-}
-
-.section-title {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: #5199AB;
-  font-weight: bold;
-}
-
-.story-content {
-  max-width: 100%;
-}
-
-.story-content h3 {
-  font-size: 1.5rem;
-  color: #333;
-  margin-bottom: 1.5rem;
-  font-weight: 600;
-}
-
-.story-content p {
-  font-size: 1rem;
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
-  color: #636e72;
-}
-
-/* Work Section in Right Content */
-.work-section {
-  padding: 5rem 2rem 3rem 2rem;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-}
-
-/* Work Timeline */
-.work-timeline {
-  max-width: 100%;
-}
-
-.work-item {
-  display: flex;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-  padding: 1.5rem;
-  background: white;
-  border-radius: 15px;
-  border-left: 4px solid #5199AB;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-}
-
-.work-icon {
-  font-size: 1.5rem;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #5199AB;
-  border-radius: 50%;
-  color: white;
-  flex-shrink: 0;
-}
-
-.work-content h3 {
-  font-size: 1.2rem;
-  color: #333;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-}
-
-.work-company {
-  font-weight: bold;
-  color: #5199AB;
-  margin-bottom: 0.3rem;
-  font-size: 0.9rem;
-}
-
-.work-location {
-  color: #636e72;
-  font-style: italic;
-  margin-bottom: 1rem;
-  font-size: 0.85rem;
-}
-
-.work-content p:last-child {
-  line-height: 1.6;
-  color: #636e72;
-  font-size: 0.9rem;
-}
-
-/* Full Width Sections */
-.contact-section,
-.footer {
-  width: 100%;
-}
-
-/* Contact Section */
-.contact-section {
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-  padding: 5rem 0;
-}
-
-.contact-section .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-.contact-section .section-title {
-  font-size: 2.5rem;
-  text-align: center;
-  margin-bottom: 3rem;
-  color: #333;
-  font-weight: bold;
-}
-
-.contact-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  margin-top: 3rem;
-}
-
-.contact-info h3 {
-  font-size: 1.8rem;
-  color: #333;
-  margin-bottom: 2rem;
-}
-
-.contact-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-.contact-icon {
-  font-size: 1.2rem;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #5199AB;
-  border-radius: 50%;
-  color: white;
-  flex-shrink: 0;
-}
-
-.contact-item h4 {
-  color: #333;
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-}
-
-.contact-item p {
-  color: #636e72;
-  line-height: 1.6;
-  font-size: 0.9rem;
-}
-
-/* Inspiration Section */
-.inspiration-section {
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.inspiration-image-placeholder {
-  flex: 1;
-  min-height: 300px;
-  background: linear-gradient(135deg, #5199AB 0%, #74b9ff 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-.inspiration-img {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 4rem;
-}
-
-.inspiration-img::before {
-  content: '🌟';
-}
-
-.inspiration-quote {
-  padding: 2rem;
-  text-align: center;
-  background: white;
-}
-
-.catchphrase {
-  font-family: 'Georgia', 'Times New Roman', serif;
-  font-style: italic;
-  font-size: 1.4rem;
-  color: #5199AB;
-  line-height: 1.6;
-  margin: 0;
-  font-weight: 300;
-  letter-spacing: 0.5px;
-}
-
-/* Footer */
-.footer {
-  background: #333;
-  color: white;
-  padding: 2rem 0;
-  text-align: center;
-}
-
-.footer .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-.footer a {
-  color: #5199AB;
-  margin: 0 0.5rem;
-}
-
-.footer a:hover {
-  text-decoration: underline;
-}
-
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .main-grid {
-    grid-template-columns: 1fr 2fr;
-  }
-}
-
-@media (max-width: 768px) {
-  .main-grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
-  }
-  
-  .left-sidebar {
-    order: 2;
-    background: #5199AB;
-    padding: 2rem;
-  }
-  
-  .right-content {
-    order: 1;
-  }
-  
-  .contact-content {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  
-  .nav-links {
-    justify-content: center;
-    gap: 1rem;
-  }
-  
-  .nav-link {
-    font-size: 0.9rem;
-    padding: 0.4rem 0.8rem;
-  }
-  
-  .work-item {
-    flex-direction: column;
-    text-align: center;
-    gap: 1rem;
-  }
-  
-  .companies-timeline {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 480px) {
-  .left-sidebar,
-  .company-section,
-  .story-section,
-  .work-section {
-    padding: 2rem 1rem;
-  }
-  
-  .contact-section .container {
-    padding: 0 1rem;
-  }
-  
-  .section-title {
-    font-size: 1.8rem;
-  }
-  
-  .name {
-    font-size: 1.8rem;
-  }
-  
-  .company-section h2 {
-    font-size: 2rem;
-  }
-}
-</style> 
+ 

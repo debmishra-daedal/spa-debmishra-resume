@@ -101,4 +101,4 @@ Desktop.ini
 
 # VS code workspace storage
 .vscode/.history
-*.workspace
+*.code-workspace
