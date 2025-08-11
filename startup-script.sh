@@ -4,8 +4,8 @@
 TRAEFIK_ENV_OVERRIDE="$TRAEFIK_ENV"
 
 #Change the letsencrypt directory and its child permissions to 600
-chmod 600 -R letsencrypt
-chmod 600 letsencrypt/acme.json
+chmod +x create-letsencrypt.sh
+./create-letsencrypt.sh
 
 # Load environment variables from .env file
 if [ -f .env ]; then

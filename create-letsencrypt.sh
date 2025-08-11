@@ -1,3 +1,15 @@
+#!/bin/bash
+
+# Create letsencrypt folder if it doesn't exist
+if [ ! -d "letsencrypt" ]; then
+    echo "Creating letsencrypt directory..."
+    mkdir letsencrypt
+fi
+
+# Check if acme.json exists in the letsencrypt folder
+if [ ! -f "letsencrypt/acme.json" ]; then
+    echo "Creating acme.json file..."
+    cat > letsencrypt/acme.json << 'EOF'
 {
   "letsencrypt": {
     "Account": {
@@ -14,3 +26,12 @@
     "Certificates": null
   }
 }
+EOF
+    echo "acme.json file created successfully."
+else
+    echo "acme.json file already exists."
+fi
+
+# Set file permissions to 600 (read/write for owner only)
+chmod 600 letsencrypt/acme.json
+echo "File permissions set to 600 for acme.json"

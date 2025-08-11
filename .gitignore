@@ -96,7 +96,7 @@ Desktop.ini
 *.code-workspace
 
 # Let's Encrypt certificates
-# letsencrypt/
+letsencrypt/
 
 # Authentication files
 .htpasswd
