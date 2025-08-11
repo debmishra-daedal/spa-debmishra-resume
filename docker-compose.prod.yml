@@ -1,0 +1,144 @@
+services:
+  # Traefik reverse proxy - Production Configuration
+  traefik:
+    image: traefik:v3.0
+    container_name: daedal-traefik-dashboard
+    restart: unless-stopped
+    environment:
+      - TRAEFIK_USER=${TRAEFIK_USER}
+      - TRAEFIK_PASSWORD=${TRAEFIK_PASSWORD}
+    command:
+      # Enable Docker provider
+      - --providers.docker=true
+      - --providers.docker.exposedbydefault=false
+      
+      # Entry points
+      - --entrypoints.web.address=:80
+      - --entrypoints.websecure.address=:443
+      
+      # Global HTTP to HTTPS redirect
+      - --entrypoints.web.http.redirections.entrypoint.to=websecure
+      - --entrypoints.web.http.redirections.entrypoint.scheme=https
+      - --entrypoints.web.http.redirections.entrypoint.permanent=true
+      
+      # Enable dashboard (secure)
+      - --api.dashboard=true
+      - --api.insecure=false
+      
+      # Let's Encrypt configuration
+      - --certificatesresolvers.letsencrypt.acme.tlschallenge=true
+      - --certificatesresolvers.letsencrypt.acme.email=admin@daedal.cloud
+      - --certificatesresolvers.letsencrypt.acme.storage=/letsencrypt/acme.json
+      
+      # Security headers
+      - --entrypoints.websecure.http.middlewares=security-headers@docker
+      
+      # Enable access logs
+      - --accesslog=true
+      - --log.level=INFO
+      
+      # Metrics for dashboard
+      - --metrics.prometheus=true
+      - --metrics.prometheus.addEntryPointsLabels=true
+      - --metrics.prometheus.addServicesLabels=true
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./letsencrypt:/letsencrypt
+      - ./.htpasswd:/etc/traefik/.htpasswd:ro
+    labels:
+      - "traefik.enable=true"
+      
+      # Dashboard router with authentication
+      - "traefik.http.routers.dashboard.rule=Host(`traefik.aws.daedal.cloud`)"
+      - "traefik.http.routers.dashboard.service=api@internal"
+      - "traefik.http.routers.dashboard.entrypoints=websecure"
+      - "traefik.http.routers.dashboard.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.dashboard.middlewares=dashboard-auth"
+      
+      # Dashboard authentication middleware (file-based)
+      - "traefik.http.middlewares.dashboard-auth.basicauth.usersfile=/etc/traefik/.htpasswd"
+      
+      # Security headers middleware
+      - "traefik.http.middlewares.security-headers.headers.customrequestheaders.X-Forwarded-Proto=https"
+      - "traefik.http.middlewares.security-headers.headers.customresponseheaders.X-Frame-Options=DENY"
+      - "traefik.http.middlewares.security-headers.headers.customresponseheaders.X-Content-Type-Options=nosniff"
+      - "traefik.http.middlewares.security-headers.headers.customresponseheaders.X-XSS-Protection=1; mode=block"
+      - "traefik.http.middlewares.security-headers.headers.customresponseheaders.Strict-Transport-Security=max-age=31536000; includeSubDomains"
+      - "traefik.http.middlewares.security-headers.headers.customresponseheaders.Referrer-Policy=strict-origin-when-cross-origin"
+    networks:
+      - daedal-network
+
+  # Deb Mishra Portfolio Website - Production
+  debmishra-spa:
+    image: nginx:alpine
+    container_name: daedal-debmishra-spa
+    restart: unless-stopped
+    volumes:
+      - ./static-site-dmishra-spa/html:/usr/share/nginx/html:ro
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.debmishra.rule=Host(`debmishra.me`)"
+      - "traefik.http.routers.debmishra.entrypoints=websecure"
+      - "traefik.http.routers.debmishra.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.debmishra.middlewares=security-headers"
+      - "traefik.http.services.debmishra.loadbalancer.server.port=80"
+    networks:
+      - daedal-network
+
+  # Lone Cypress Holdings Website - Production
+  lsh-spa:
+    image: nginx:alpine
+    container_name: daedal-lsh-spa
+    restart: unless-stopped
+    volumes:
+      - ./static-site-lsh-spa/html:/usr/share/nginx/html:ro
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.lsh.rule=Host(`lonecypress.nl`)"
+      - "traefik.http.routers.lsh.entrypoints=websecure"
+      - "traefik.http.routers.lsh.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.lsh.middlewares=security-headers"
+      - "traefik.http.services.lsh.loadbalancer.server.port=80"
+    networks:
+      - daedal-network
+
+  # Nionjord Investments Website - Production
+  ni-spa:
+    image: nginx:alpine
+    container_name: daedal-ni-spa
+    restart: unless-stopped
+    volumes:
+      - ./static-site-ni-spa/html:/usr/share/nginx/html:ro
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.ni.rule=Host(`nionjord.com`)"
+      - "traefik.http.routers.ni.entrypoints=websecure"
+      - "traefik.http.routers.ni.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.ni.middlewares=security-headers"
+      - "traefik.http.services.ni.loadbalancer.server.port=80"
+    networks:
+      - daedal-network
+
+  # Daedal Website - Production
+  d-spa:
+    image: nginx:alpine
+    container_name: daedal-d-spa
+    restart: unless-stopped
+    volumes:
+      - ./static-site-d-spa/html:/usr/share/nginx/html:ro
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.d.rule=Host(`daedal.org`)"
+      - "traefik.http.routers.d.entrypoints=websecure"
+      - "traefik.http.routers.d.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.d.middlewares=security-headers"
+      - "traefik.http.services.d.loadbalancer.server.port=80"
+    networks:
+      - daedal-network
+
+networks:
+  daedal-network:
+    driver: bridge

@@ -15,7 +15,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: url('images/jeremy-bishop-unsplash.jpg') center center / cover no-repeat fixed;
             min-height: 100vh;
         }
 
@@ -60,9 +60,15 @@
         }
 
         .logo::before {
-            content: "🌲";
+            content: "";
+            background-image: url('images/icon.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: inline-block;
+            width: 28px;
+            height: 28px;
             margin-right: 10px;
-            font-size: 28px;
         }
 
         /* Main content */
@@ -88,6 +94,63 @@
             transform: translateY(20px);
             opacity: 0;
             animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .home-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            text-align: left;
+        }
+
+        .home-content {
+            padding-right: 20px;
+        }
+
+        .home-content p {
+            text-align: justify;
+        }
+
+        .home-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .home-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+            justify-content: flex-start;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
+            color: white;
         }
 
         @keyframes fadeInUp {
@@ -171,10 +234,14 @@
             gap: 20px;
         }
 
-        .footer-item {
-            flex: 1;
-            min-width: 200px;
-            text-align: center;
+        .footer-left {
+            text-align: left;
+        }
+
+        .footer-right {
+            display: flex;
+            gap: 30px;
+            text-align: right;
         }
 
         /* Smooth scrolling */
@@ -205,6 +272,31 @@
             .contact-info {
                 grid-template-columns: 1fr;
             }
+
+            .home-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+
+            .home-content {
+                padding-right: 0;
+            }
+
+            .button-group {
+                justify-content: center;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            .footer-right {
+                flex-direction: column;
+                gap: 10px;
+            }
         }
 
         /* Navigation smooth scroll offset */
@@ -225,8 +317,23 @@
             <div class="container">
                 <div class="section-content">
                     <h1>Welcome to Lone Cypress Holdings</h1>
-                    <p>We are a forward-thinking company dedicated to excellence in our field. Our commitment to quality and innovation drives everything we do.</p>
-                    <p>Discover how we can help transform your business and achieve your goals with our comprehensive solutions and expert guidance.</p>
+                    <div class="home-grid">
+                        <div class="home-content">
+                            <p>Lone Cypress Holdings is a holding company incorporated and based in The Hague, Netherlands. 
+                            The company serves as the parent entity for its wholly-owned subsidiaries, Daedal B.V. and Nionjord Investments, 
+                            with its primary business activities centered on the strategic oversight, governance, and management of these 
+                            subsidiary operations. Through this holding structure, Lone Cypress Holdings maintains operational control 
+                            and provides corporate direction for the business activities conducted by Daedal B.V. and Nionjord Investments, 
+                            while ensuring compliance with applicable Dutch corporate law and regulatory requirements.</p>
+                            <div class="button-group">
+                                <a href="https://www.daedal.org" target="_blank" class="btn">Daedal</a>
+                                <a href="https://www.nionjord.com" target="_blank" class="btn">Nionjord</a>
+                            </div>
+                        </div>
+                        <div class="home-image">
+                            <img src="images/logo.png" alt="Lone Cypress Holdings Logo">
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -235,7 +342,7 @@
             <div class="container">
                 <div class="section-content">
                     <h2>Contact Us</h2>
-                    <p>Get in touch with us to learn more about our services and how we can help your business grow.</p>
+                    <p>Feel free to write to us if you have any additional queries.</p>
                     
                     <div class="contact-info">
                         <div class="contact-item">
@@ -244,11 +351,11 @@
                         </div>
                         <div class="contact-item">
                             <h3>📞 Phone</h3>
-                            <p>+31 20 123 4567</p>
+                            <p>+31 70 701 3707</p>
                         </div>
                         <div class="contact-item">
                             <h3>📍 Address</h3>
-                            <p>Amsterdam, Netherlands</p>
+                            <p>Zuid Hollandlaan 7, Den Haag, Zuid Holland, 2596 AL, Netherlands</p>
                         </div>
                     </div>
                 </div>
@@ -259,14 +366,12 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-item">
+                <div class="footer-left">
                     <p>&copy; 2025 Lone Cypress Holdings. All rights reserved.</p>
                 </div>
-                <div class="footer-item">
-                    <p>KVK# 12345678</p>
-                </div>
-                <div class="footer-item">
-                    <p>BTW: NL5648689</p>
+                <div class="footer-right">
+                    <p>KVK# 84527285</p>
+                    <p>BTW: NL863245584B01</p>
                 </div>
             </div>
         </div>

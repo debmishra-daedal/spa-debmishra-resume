@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lone Cypress Holdings</title>
+    <title>Nionjord Investments</title>
     <style>
         * {
             margin: 0;
@@ -15,7 +15,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: url('images/igor-omilaev.jpg') center center / cover no-repeat fixed;
             min-height: 100vh;
         }
 
@@ -60,9 +60,15 @@
         }
 
         .logo::before {
-            content: "🌲";
+            content: "";
+            background-image: url('images/ni-icon.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: inline-block;
+            width: 28px;
+            height: 28px;
             margin-right: 10px;
-            font-size: 28px;
         }
 
         /* Main content */
@@ -88,6 +94,63 @@
             transform: translateY(20px);
             opacity: 0;
             animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .home-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            text-align: left;
+        }
+
+        .home-content {
+            padding-right: 20px;
+        }
+
+        .home-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .home-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .home-content p {
+            text-align: justify;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+            justify-content: flex-start;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
+            color: white;
         }
 
         @keyframes fadeInUp {
@@ -171,10 +234,14 @@
             gap: 20px;
         }
 
-        .footer-item {
-            flex: 1;
-            min-width: 200px;
-            text-align: center;
+        .footer-left {
+            text-align: left;
+        }
+
+        .footer-right {
+            display: flex;
+            gap: 30px;
+            text-align: right;
         }
 
         /* Smooth scrolling */
@@ -205,6 +272,31 @@
             .contact-info {
                 grid-template-columns: 1fr;
             }
+
+            .home-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+
+            .home-content {
+                padding-right: 0;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            .footer-right {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .button-group {
+                justify-content: center;
+            }
         }
 
         /* Navigation smooth scroll offset */
@@ -216,7 +308,7 @@
 <body>
     <header>
         <div class="header-content">
-            <a href="#home" class="logo" onclick="scrollToSection('home')">Lone Cypress Holdings</a>
+            <a href="#home" class="logo" onclick="scrollToSection('home')">Nionjord Investments</a>
         </div>
     </header>
 
@@ -225,8 +317,27 @@
             <div class="container">
                 <div class="section-content">
                     <h1>Welcome to Nionjord Investments</h1>
-                    <p>We are a forward-thinking company dedicated to excellence in our field. Our commitment to quality and innovation drives everything we do.</p>
-                    <p>Discover how we can help transform your business and achieve your goals with our comprehensive solutions and expert guidance.</p>
+                    <div class="home-grid">
+                        <div class="home-content">
+                            <p>Nionjord Investments is a boutique investment firm incorporated and based in The Hague, Netherlands, 
+                            operating as a wholly-owned subsidiary of Lone Cypress Holdings. The company functions as an in-house 
+                            investment vehicle with the primary objective of deploying excess capital generated by Lone Cypress Holdings
+                            and its affiliated subsidiaries into diversified market investments to generate positive returns. Nionjord Investments
+                            conducts its trading activities exclusively through Interactive Brokers as its designated investment platform, 
+                            limiting its investment scope to listed non-derivative financial instruments, specifically stocks and exchange-traded funds (ETFs).
+                            The firm's investment mandate encompasses securities markets in the United States, Canada, 
+                            the European Union (including the United Kingdom), Japan, South Korea, Taiwan, Australia, and New Zealand,
+                            operating within the regulatory frameworks governing investment activities in the Netherlands and applicable
+                            international securities regulations.</p>
+                            <div class="button-group">
+                                <a href="https://www.lonecypress.nl" target="_blank" class="btn">Lone Cypress Holdings</a>
+                                <a href="https://www.daedal.org" target="_blank" class="btn">Daedal</a>
+                            </div>
+                        </div>
+                        <div class="home-image">
+                            <img src="images/ni-logo.png" alt="Nionjord Investments Logo">
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -244,11 +355,11 @@
                         </div>
                         <div class="contact-item">
                             <h3>📞 Phone</h3>
-                            <p>+31 20 123 4567</p>
+                            <p>+31 70 701 3706</p>
                         </div>
                         <div class="contact-item">
                             <h3>📍 Address</h3>
-                            <p>Amsterdam, Netherlands</p>
+                            <p>Zuid Hollandlaan 7, The Hague, Zuid-Holland, 2596 AL, Netherlands</p>
                         </div>
                     </div>
                 </div>
@@ -259,14 +370,12 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-item">
-                    <p>&copy; 2025 Lone Cypress Holdings. All rights reserved.</p>
+                <div class="footer-left">
+                    <p>&copy; 2025 Nionjord Investments. All rights reserved.</p>
                 </div>
-                <div class="footer-item">
-                    <p>KVK# 12345678</p>
-                </div>
-                <div class="footer-item">
-                    <p>BTW: NL5648689</p>
+                <div class="footer-right">
+                    <p>KVK# 84535989</p>
+                    <p>BTW: NL863249450B01</p>
                 </div>
             </div>
         </div>
