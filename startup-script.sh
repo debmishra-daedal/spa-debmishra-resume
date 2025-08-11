@@ -45,9 +45,6 @@ if [ "$TRAEFIK_ENV" = "prod" ]; then
 else
     echo "🔓 Development mode: Skipping .htpasswd generation (dashboard will be open)"
 fi
-chown -R $USER:$USER .htpasswd
-chown -R $USER:$USER letsencrypt
-chmod 644 .htpasswd
 
 echo "🚀 Starting Traefik with: TRAEFIK_ENV=$TRAEFIK_ENV docker-compose up --build --force-recreate -d"
 TRAEFIK_ENV=$TRAEFIK_ENV docker-compose up --build --force-recreate -d
