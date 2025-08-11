@@ -3,6 +3,9 @@
 # Store command line TRAEFIK_ENV if provided
 TRAEFIK_ENV_OVERRIDE="$TRAEFIK_ENV"
 
+#Change the letsencrypt directory and its child permissions to 600
+chmod 600 -R letsencrypt
+
 # Load environment variables from .env file
 if [ -f .env ]; then
     export $(grep -v '^#' .env | xargs)
