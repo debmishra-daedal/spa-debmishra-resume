@@ -52,7 +52,7 @@ services:
       - "traefik.enable=true"
       
       # Dashboard router with authentication
-      - "traefik.http.routers.dashboard.rule=Host(`traefik.aws.daedal.cloud`)"
+      - "traefik.http.routers.dashboard.rule=Host(`traefik.oci.daedal.cloud`)"
       - "traefik.http.routers.dashboard.service=api@internal"
       - "traefik.http.routers.dashboard.entrypoints=websecure"
       - "traefik.http.routers.dashboard.tls.certresolver=letsencrypt"
@@ -83,7 +83,6 @@ services:
       - "traefik.http.routers.debmishra.rule=Host(`debmishra.me`)"
       - "traefik.http.routers.debmishra.entrypoints=websecure"
       - "traefik.http.routers.debmishra.tls.certresolver=letsencrypt"
-      - "traefik.http.routers.debmishra.middlewares=security-headers"
       - "traefik.http.services.debmishra.loadbalancer.server.port=80"
     networks:
       - daedal-network
@@ -100,7 +99,6 @@ services:
       - "traefik.http.routers.lsh.rule=Host(`lonecypress.nl`)"
       - "traefik.http.routers.lsh.entrypoints=websecure"
       - "traefik.http.routers.lsh.tls.certresolver=letsencrypt"
-      - "traefik.http.routers.lsh.middlewares=security-headers"
       - "traefik.http.services.lsh.loadbalancer.server.port=80"
     networks:
       - daedal-network
@@ -117,7 +115,6 @@ services:
       - "traefik.http.routers.ni.rule=Host(`nionjord.com`)"
       - "traefik.http.routers.ni.entrypoints=websecure"
       - "traefik.http.routers.ni.tls.certresolver=letsencrypt"
-      - "traefik.http.routers.ni.middlewares=security-headers"
       - "traefik.http.services.ni.loadbalancer.server.port=80"
     networks:
       - daedal-network
@@ -134,7 +131,6 @@ services:
       - "traefik.http.routers.d.rule=Host(`daedal.org`)"
       - "traefik.http.routers.d.entrypoints=websecure"
       - "traefik.http.routers.d.tls.certresolver=letsencrypt"
-      - "traefik.http.routers.d.middlewares=security-headers"
       - "traefik.http.services.d.loadbalancer.server.port=80"
     networks:
       - daedal-network
