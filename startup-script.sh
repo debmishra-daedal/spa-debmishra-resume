@@ -46,5 +46,7 @@ else
     echo "🔓 Development mode: Skipping .htpasswd generation (dashboard will be open)"
 fi
 
-echo "🚀 Starting Traefik with: TRAEFIK_ENV=$TRAEFIK_ENV docker-compose up -d"
+chmod 644 .htpasswd
+
+echo "🚀 Starting Traefik with: TRAEFIK_ENV=$TRAEFIK_ENV docker-compose up --build --force-recreate -d"
 TRAEFIK_ENV=$TRAEFIK_ENV docker-compose up --build --force-recreate -d
